@@ -1,14 +1,32 @@
 import express from 'express';
 import { Request, Response } from 'express';
+import * as admin from 'firebase-admin';
 
 const app = express()
 
 app.use(express.json())
 
+//Inicializando o Firebase
+var serviceAccount = require("./credentials.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+const db =admin.firestore()
+
 //Routes (Filme: id, nome, tema, ano, duracao)
-app.get('/filmes', (req: Request, res: Response)=>{
+app.get('/filmes', async (req: Request, res: Response)=>{
+   //conectando na coleção
+   const filmesRef = db.collection('filmes')
+   //referência
+   const filmesDoc = await filmesRef.get()
+
+   const filmes: any = []
+   //extraindo data e colocando na lista
+   filmesDoc.forEach((doc)=>{filmes.push(doc.data())})
    
-    return res.status(200).json([])
+   return res.status(200).json([filmes])
  })
 
  app.post('/filmes', (req: Request, res: Response)=>{
