@@ -1,5 +1,5 @@
 # Front-End appFilmes 🎥
-<img src="https://github.com/jose-rgb/Internet_programming_II/blob/main/appfilmes/.github/print.png">
+<img src="">
 
 ## 🛠 Tecnologias utilizadas
 - **[CSS3](https://en.wikipedia.org/wiki/CSS)**
