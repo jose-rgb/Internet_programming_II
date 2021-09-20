@@ -1,10 +1,12 @@
 import express from 'express';
 import { Request, Response } from 'express';
 import * as admin from 'firebase-admin';
+import cors from 'cors';
 
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 //Inicializando o Firebase
 var serviceAccount = require("./credentials.json");
@@ -54,26 +56,29 @@ app.get('/filmes', async (req: Request, res: Response)=>{
 
 
 //atualizar filme
- app.put('/filmes/:id', (req: Request, res: Response)=>{
+ app.put('/filmes/:id', async(req: Request, res: Response)=>{
    //pegar no db o obj de por id, atualizar e retornar 
     const id = req.params.id
     
-    const filme = { id, nome: 'lagoa azul', ano: 1999, duracao: 12 }
+    
+    const filme = await db.collection('filmes').doc(id).get()
 
-    return res.status(200).json([filme])
+    //const filmePut = await filme.update({nome: true});
+
+    return res.status(200).json({id: filme.id, ...filme.data()})
  })
 
 
  //deletar filme
- app.delete('/filmes/:id', (req: Request, res: Response)=>{
-   //ir no db e verificar se id existe
+ app.delete('/filmes/:id',async(req: Request, res: Response)=>{
     const id = req.params.id
 
-    return res.status(204).json({ola: "helooo"})
+    const filmeRef = await db.collection('filmes').doc(id).delete();
+
+    return res.status(204)
     
  })
 
-//http://localhost:3000/
 app.listen(3000, ()=>{
-    console.log('App running....')
+    console.log('App running in http://localhost:3000/')
 })

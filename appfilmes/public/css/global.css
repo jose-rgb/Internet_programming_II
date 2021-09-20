@@ -1,0 +1,166 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(131, 183, 230);
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(230, 7, 7);
+    width: 80vw;
+    height: 15vh;
+    border-radius: 4px;
+}
+
+header h1 {
+    margin-right: 10px;
+}
+
+header img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+
+    opacity: 0;
+    transition: opacity 400;
+}
+
+#slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected{
+    opacity: 1;
+}
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    width: 80vw;
+}
+
+.btn {
+    font-size: .8rem;
+    border-radius: 15px;
+    background: rgb(40, 241, 13);
+    color: #000000;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px rgb(18, 129, 3);;
+}
+
+.btn:hover {
+    background: rgb(34, 219, 10);;;
+
+}
+
+
+.btn:active {
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+}
+
+#cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 17rem;
+    height: 17rem;
+    background: rgb(230, 7, 7);
+    margin: 1rem;
+    border-radius: 8px;
+}
+
+.card img {
+    width: 40px;
+    height: 40px;
+}
+
+.card span {
+    color: rgb(40, 241, 13);
+}
+
+/*/////*/
+#inputsAdd {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 12rem;
+    height: 2rem;
+    background: rgb(40, 241, 13);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.burguer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
+
+.burguer img {
+    margin-left: 4px;
+    width: 24px;
+    height: 24px;
+} 
+
+#inputAdd #menu-burguer{
+    display: none;
+}
+
+#inputAdd ul {
+    height: 15vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    display: none;
+}
+
+#inputAdd ul .inputForm {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(230, 7, 7);;
+}
+
+#inputAdd input:checked  ~ ul {
+    display: flex;
+}

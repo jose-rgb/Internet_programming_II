@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="shortcut icon" href="/images/04.png" type="image/png">
+    <title>appFilmes</title>
+</head>
+<body>
+    <header>
+        <h1>appFilmes</h1>
+        <div id="slider">
+            <img src="/images/01.png" class="selected">
+            <img src="/images/02.png">
+            <img src="/images/03.png">
+            <img src="/images/04.png">
+        </div>
+    </header>
+    
+
+    <div id="container">
+        <div id="inputAdd">
+            
+            <input id="menu-burguer" type ="checkbox">
+            <label for="menu-burguer">
+                <div class="menu">
+                    <span class="burguer"> <h3>Adicionar Filme</h3><img src="/images/plus.png"></span>
+                </div>
+            </label>
+
+            <ul>
+                <input id="filme-nome" class="inputForm" type="text" placeholder="Nome">
+                <input id="filme-genero" class="inputForm" type="text" placeholder="Gênero">
+                <input id="filme-duracao" class="inputForm" ype="number" placeholder="Duração em min.">
+                <input id="filme-ano" class="inputForm" type="number" placeholder="Ano">
+           
+                <button id="addNewMovie" class="btn"><h2>Adicionar filme</h2></button>
+            </ul>
+
+        </div>
+        
+        <div id="cards">
+
+            <template id="card-template">
+
+                <div class="card">
+                    <img src="/images/cinema-camera.png">
+                    <h3>Nome: <span></span></h3>
+                    <h3>Gênero: <span></span></h3>
+                    <h3>Duração (min):<span></span></h3>
+                    <h3>Ano: <span></span></h3>
+                </div>
+
+            </template>
+           
+        </div>
+
+    </div>
+    <script src="/scripts/banner.js"></script>
+    <script src="/scripts/fetchApi.js"></script>
+</body>
+</html>
