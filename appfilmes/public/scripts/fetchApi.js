@@ -76,6 +76,11 @@ const newMovie = async () => {
 
      //adicionando card criado
      containerCards.prepend(cardElement)
+
+     document.getElementById('filme-nome').value='';
+     document.getElementById('filme-genero').value='';
+     document.getElementById('filme-duracao').value='';
+     document.getElementById('filme-ano').value='';
 }
 
 //iniciar após carregar a página

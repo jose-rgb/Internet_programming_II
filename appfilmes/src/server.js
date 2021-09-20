@@ -13,4 +13,6 @@ server.get('/', (request, response)=>{
     return response.render('index')
 })
 
-server.listen(5500) 
+server.listen(5500, ()=>{
+    console.log('App running in http://localhost:5500/')
+}) 
