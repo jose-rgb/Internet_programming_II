@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 14vh;
+
+    background: linear-gradient(#2193b0, #6dd5ed);
+}
+
+header h1 {
+    font-family: 'Rye', cursive;
+    color: rgb(12, 15, 233);
+}
+
+header img {
+    margin-left: 4px;
+    width: 40px;
+    height: 40px;
+}
+
+#cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin-top: 6vh;
+    width: 100%;
+}
+
+.card {
+    margin-top: 4vh;
+    width: 60%;
+    
+    border-radius: 16px;
+    background: #36D1DC;   
+}
+
+.card div {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+}
+
+.card div h3 {
+    margin: 16px;
+    border-bottom: 2px solid rgb(12, 15, 233);;
+}
+
+.card div img {
+    margin: 16px;
+    width: 30px;
+    height: 30px;
+}
+
+.card div .edit {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.card .description {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.description h4 {
+    padding: 2rem;
+    margin-top: 16px;
+    border-radius: 32px;
+    background: #FFFFFF;
+    width: 80%;
+}
+
+.card .status .img-status {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height:  6vh;
+}
+
+
+.card .img-status .visible {
+    display: flex;
+}
