@@ -31,6 +31,28 @@ header img {
     height: 40px;
 }
 
+#form {
+    margin-top: 4vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    padding: 1rem;
+    background: #36D1DC;
+    cursor: pointer;
+    transition: filter 0.2s;   
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+
 #cards {
     display: flex;
     flex-direction: column;
@@ -38,7 +60,7 @@ header img {
     justify-content: center;
     flex-wrap: wrap;
 
-    margin-top: 6vh;
+    margin-top: 4vh;
     width: 100%;
 }
 
