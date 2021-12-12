@@ -2,6 +2,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 import * as admin from 'firebase-admin';
 import cors from 'cors';
+import { MovieController } from './presentation/controllers/MovieController';
 
 const app = express()
 
@@ -19,19 +20,10 @@ const db =admin.firestore()
 
 //Routes (Filme: id, nome, genero, ano, duracao)
 
-//listar todos
-app.get('/filmes', async (req: Request, res: Response)=>{
-   //conectando na coleção
-   const filmesRef = db.collection('filmes')
-   //referência
-   const filmesDoc = await filmesRef.get()
+const movieController = new MovieController()
 
-   const filmes: any = []
-   //extraindo data e colocando na lista
-   filmesDoc.forEach(doc=>filmes.push({id: doc.id, ...doc.data()}))
-   
-   return res.status(200).json([filmes])
- })
+//listar todos
+app.get('/filmes', movieController.save)
 
 //criar filme
  app.post('/filmes', async(req: Request, res: Response)=>{

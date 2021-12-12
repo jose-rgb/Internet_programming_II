@@ -1,3 +1,8 @@
+header a {
+   position: absolute;
+   left: 2rem;
+}
+
 form {
     margin-top: 8vh;
     width: 100%;
@@ -10,9 +15,97 @@ form {
     border-radius: 8px;
     width: 60%;
     height: 60vh;
-    background: #36D1DC;
+    background: #dfdc54;  
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
+
+#card h2 {
+    color: #020808;
+    margin-bottom: 1rem;
+    font-size: 26px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+#card input {
+    margin-top: 1rem;
+    width: 60%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 0;
+}
+
+#card button {
+    margin-top: 2rem;
+    background: greenyellow;
+    box-shadow: 0 2px rgb(18, 129, 3);
+    color: #020808;
+    font-size: 18px;
+}
+
+#card button:active {
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+}
+
+.dropdown {
+    margin-top: 1rem;
+    position: relative;
+    width: 60%;
+   
+}
+
+.dropdown:hover .dropdown-list {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.dropdown-select:hover {
+    background: #d4f60f;
+}
+
+.dropdown-select img {
+    height: 20px;
+    width: 20px;
+}
+
+.dropdown-list {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #d4f60f;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.dropdown-list__item {
+    padding: .2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-list__item:hover {
+    background: #d4f60f;
+}
+

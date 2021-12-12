@@ -17,6 +17,9 @@
 </head>
 <body>
     <header>
+        <a href="/">
+            <img src="/images/left-arrow.png">
+        </a>
         <h1>toDoList</h1>
         <img src="/images/clipboard (1).png">
     </header>
@@ -24,11 +27,29 @@
     <form>
         <div id="card">
             <h2>Preencha os campos</h2>
-            <input id="title" type="text" placeholder="Título">
-            <input id="description" type="text" placeholder="Título">
-            <input id="state" type="text" placeholder="Título">
+            <input id="title" type="text" placeholder="Título"  required>
+
+            <input id="description" type="text" placeholder="Descrição"  required>
+
+            <div class="dropdown">
+            <div class="dropdown-select">
+                <span class="select" id="status">Status</span>
+                <img src="/images/baixo.png">
+            </div>
+            <div class="dropdown-list">
+                <div class="dropdown-list__item" id="concluido" onclick="selectItemConcluido()">Concluído</div>
+                <div class="dropdown-list__item" id="andamento" onclick="selectItemEmAndamento()">Em andamento</div>
+                <div class="dropdown-list__item" id="cancelado" onclick="selectItemCancelado()">Cancelado</div>
+            </div>
         </div>
+
+            
+        
+
+            <button id="addCard">Adicionar tarefa</button>
+        </div>
+
     </form>
-   
+   <script src="/scripts/selectStatus.js"></script>
 </body>
 </html>
